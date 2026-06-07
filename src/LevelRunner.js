@@ -13,14 +13,14 @@ const PARTICLE_CONFIGS = {
     ],
     gravity: 0.3, vyMin: 0.5, vyMax: 2
   },
-  // 花洒: 流水线条 + 冲出的棕色卷毛/羊毛团子
+  // 花洒: 流水线条 + 冲出的棕色卷毛/羊毛团子,碎屑较多
   shower: {
-    count: 8,
+    count: 12,
     particleSet: [
-      { type: 'streak', color: 'rgba(79, 195, 247, 0.85)', weight: 0.55, size: [10, 18] },
-      { type: 'streak', color: 'rgba(255, 255, 255, 0.7)', weight: 0.15, size: [8, 14] },
-      { type: 'curl', color: '#8b6f47', weight: 0.15, size: [4, 8] },
-      { type: 'tuft', color: 'rgba(139, 110, 74, 0.55)', weight: 0.15, size: [6, 12] }
+      { type: 'streak', color: 'rgba(79, 195, 247, 0.85)', weight: 0.4, size: [10, 18] },
+      { type: 'streak', color: 'rgba(255, 255, 255, 0.7)', weight: 0.1, size: [8, 14] },
+      { type: 'curl', color: '#8b6f47', weight: 0.25, size: [4, 8] },
+      { type: 'tuft', color: 'rgba(139, 110, 74, 0.55)', weight: 0.25, size: [6, 12] }
     ],
     gravity: 0.55, vyMin: 2.5, vyMax: 4.5
   },

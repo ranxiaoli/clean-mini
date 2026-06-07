@@ -12,16 +12,13 @@ export default [
         nextObjectImage: 'images/placeholder/level01/sheep_state1.png',
         layer: { brushRadius: 25 }
       },
-      // step2: 花洒湿润 — 流水冲洗覆盖 80%, 完成后保留若隐若现的水污, state 不变
+      // step2: 花洒冲洗 — 擦除 state1 露出 state2,带流水线和棕色羊毛碎屑飘落
       {
-        name: '花洒湿润', tool: 'shower', passThreshold: 0.8,
-        effect: 'overlay',
-        layer: {
-          brushRadius: 55,
-          overlayColor: 'rgba(120, 160, 200, 0.25)'
-        }
+        name: '花洒冲洗', tool: 'shower', passThreshold: 0.9,
+        nextObjectImage: 'images/placeholder/level01/sheep_state2.png',
+        layer: { brushRadius: 30 }
       },
-      // step3: 喷雾 — 土色喷剂覆盖到羊身上,80% 算完成,state 仍是 state1
+      // step3: 喷雾 — 土色喷剂覆盖到羊身上,80% 算完成,state 仍是 state2
       {
         name: '喷清洁剂', tool: 'spray', passThreshold: 0.8,
         effect: 'overlay',
@@ -30,8 +27,7 @@ export default [
           overlayColor: 'rgba(160, 130, 80, 0.6)'
         }
       },
-      // step4: 刷子 — 刷出白色泡泡覆盖 80%,state 仍是 state1
-      // step4: 刷子 — 刷出白色泡泡,覆盖 80%,state 仍是 state1
+      // step4: 刷子 — 刷出白色泡泡覆盖 80%,state 仍是 state2
       {
         name: '刷出泡泡', tool: 'brush', passThreshold: 0.8,
         effect: 'overlay',
@@ -40,36 +36,36 @@ export default [
           overlayColor: 'rgba(255, 255, 255, 0.85)'
         }
       },
-      // step5: 再次花洒冲洗 — 冲掉泡泡,露出 state2 (rinse:同时擦 foam 和 object)
+      // step5: 再次花洒冲洗 — 冲掉泡泡,露出 state3 (rinse:同时擦 foam 和 object)
       {
         name: '冲洗泡泡', tool: 'shower', passThreshold: 0.9,
         effect: 'rinse',
-        nextObjectImage: 'images/placeholder/level01/sheep_state2.png',
+        nextObjectImage: 'images/placeholder/level01/sheep_state3.png',
         layer: { brushRadius: 55 }
       },
-      // step6: 吹风机 — 每吹一处露出 state3,白色卷毛+风线飘落
+      // step6: 吹风机 — 每吹一处露出 state4,白色卷毛+风线飘落
       {
         name: '吹干毛发', tool: 'dryer', passThreshold: 0.9,
-        nextObjectImage: 'images/placeholder/level01/sheep_state3.png',
+        nextObjectImage: 'images/placeholder/level01/sheep_state4.png',
         layer: { brushRadius: 45 }
       },
-      // step7: 剪刀 — 每剪一处露出 state4,白色羊毛一撮飘落
+      // step7: 剪刀 — 每剪一处露出 state5,白色羊毛一撮飘落
       {
         name: '修剪羊毛', tool: 'scissors', passThreshold: 0.9,
-        nextObjectImage: 'images/placeholder/level01/sheep_state4.png',
+        nextObjectImage: 'images/placeholder/level01/sheep_state5.png',
         layer: { brushRadius: 40 }
       },
-      // step8: 剃须刀 — 每剔一处露出 state5,一坨坨羊毛飘落
+      // step8: 剃须刀 — 每剔一处露出 state6,一坨坨羊毛飘落
       {
         name: '剃除羊毛', tool: 'trimmer', passThreshold: 0.9,
-        nextObjectImage: 'images/placeholder/level01/sheep_state5.png',
+        nextObjectImage: 'images/placeholder/level01/sheep_state6.png',
         layer: { brushRadius: 38 }
       },
-      // step9: 拍打翻面 — 拍两边屁股 4 下,state5 → state6
+      // step9: 拍打翻面 — 拍两边屁股 4 下, 完成关卡
       {
         name: '拍打翻面', tool: 'clap', passThreshold: 0.9,
         effect: 'flip',
-        nextObjectImage: 'images/placeholder/level01/sheep_state6.png',
+        nextObjectImage: 'images/placeholder/level01/sheep_final.png',
         layer: { brushRadius: 50, clapTarget: 4 }
       }
     ]
